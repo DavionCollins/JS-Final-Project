@@ -24,11 +24,31 @@
     <div class="search">
     <h1 class="search__title">Browse our Movies</h1>
     <div class="input__wrapper">
-    <input type="text" class="search__input" placeholder="Search by Name, Year, or Keyword"></input>
+    <input type="text" class="search__input" placeholder="Search by Name, Year, or Keyword" oninput="onSearchChange(event)"></input>
     <button class="search__button"><i class="fa-solid fa-magnifying-glass"></i></button>
     </div>
     </div>
   </nav>
-    
+
+    <section id="search__result">
+      <div class="search__result--filter">
+        <div class="input__name">Search results:</div>
+        <select class="filter">
+          <option value="default">Sort By</option>
+          <option value="name__asc">Name (Ascending)</option>
+          <option value="name__dsc">Name (Dscending)</option>
+          <option value="year__asc">Year (Ascending)</option>
+          <option value="year__asc">Year (Ascending)</option>
+        </select>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="movie__list">
+        </div>
+      </div>
+        </div>
+      </div>
+      
+    </section>
 </body>
 </html>

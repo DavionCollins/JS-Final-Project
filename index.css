@@ -14,6 +14,16 @@ a {
     font-weight: 500;
 }
 
+section {
+    width: 100%;
+    height: 100%;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+}
+
 
 /* 
 
@@ -28,9 +38,6 @@ nav{
     align-items: center;
     height: 326px;
     padding: 32px;
-    position: fixed;
-    top: 0;
-    left: 0;
     justify-content: space-between;
     background: #b40303;
     background-image: url(Assets/Header__Background.png);
@@ -38,15 +45,13 @@ nav{
     background-repeat: no-repeat;
 }
 .overlay {
-    background-color: #b40303;
     z-index: 2;
     width: 100%;
-    height: 100%;
     position: absolute;
-    background: cover;
     top: 0;
     left: 0;
     opacity: 0.3;
+    height: calc(100vh - 370px);
 }
 
 .nav__top {
@@ -94,7 +99,7 @@ nav{
     z-index: 4;
     background: none;
     border: none;
-    padding: 20px 20px 0 8px;
+    padding: 24px 20px 0 8px;
     cursor: pointer;
     font-size: 32px;
     color:#b40303;
@@ -137,4 +142,53 @@ nav{
 
 .nav__link--primary:hover {
     background-color: #242424;
+}
+
+/* 
+
+Search Result Section
+
+*/
+
+
+.search__result--filter {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 64px 64px;
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.movie__list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.movie {
+    margin: 16px;
+    padding: 8px;
+    border-radius: 8px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background-color: #423232;
+}
+
+.movie:hover {
+    box-shadow: 8px 0 16px rgba(0,0,0,0.3);
+    transform: scale(1.05);
+    transition: all 300ms ease;
+}
+
+.movie__title {
+    color: #fff;
+    font-size: 20px;
+    margin-top: 12px;
+}
+
+.movie__year {
+    color: #fff;
+    font-size: 18px;
+    margin-top: 12px
 }
