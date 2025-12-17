@@ -12,6 +12,7 @@
   <nav>
     <div class="overlay"></div>
     <div class="nav__top">
+      <div class="menu"></div>
     <div class="nav__logo--wrapper">
       <img  class="nav__logo" src="Assets/movie__logo.jpg">
     </div>
@@ -20,6 +21,15 @@
       <a href="#" class="nav__link">Browse</a>
       <a href="#" class="nav__link nav__link--primary">Contact</a>
     </div>
+    <button class="btn__menu" onclick=openMenu()><i class="fa-solid fa-bars"></i></button>
+    </div>
+    <div class="menu">
+    <button class=" btn__menu btn__menu--close" onclick=closeMenu()><i class="fa-solid fa-x"></i></button>
+      <div class="menu__links">
+      <a href="#" onclick=closeMenu() class="menu__link">Home</a>
+      <a href="#" onclick=closeMenu() class="menu__link">Browse</a>
+      <a href="#" onclick=closeMenu() class="menu__link">Contact</a>
+      </div>
     </div>
     <div class="search">
     <h1 class="search__title">Browse our Movies</h1>
@@ -32,7 +42,7 @@
 
     <section id="search__result">
       <div class="search__result--filter">
-        <div class="input__name">Search results:</div>
+        <div class="input__name">Search results:<span id="searchText"></span></div>
         <select class="filter">
           <option value="default">Sort By</option>
           <option value="name__asc">Name (Ascending)</option>

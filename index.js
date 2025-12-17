@@ -1,5 +1,13 @@
 // https://www.omdbapi.com/?i=tt3896198&apikey=e56ee402&s=fast
+function openMenu() {
+document.body.classList.add('menu__open')
+}
 
+function closeMenu() {
+document.body.classList.remove('menu__open')
+}
+
+const searchText = document.getElementById("searchText")
 
 const movieListEl = document.querySelector(".movie__list")
 const filterEl = document.getElementById("search__result")
@@ -7,6 +15,8 @@ let movies = []
 
 async function onSearchChange(event) {
     const Search = event.target.value.trim()
+
+    searchText.textContent = Search === "" ? "" : `"${Search}"`
 
     if (!Search) {
     movieListEl.innerHTML = ""
