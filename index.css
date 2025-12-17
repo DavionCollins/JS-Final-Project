@@ -64,7 +64,7 @@ nav{
     background-repeat: no-repeat;
 }
 .overlay {
-    z-index: 2;
+    z-index: -1;
     width: 100%;
     position: absolute;
     top: 0;
@@ -76,7 +76,7 @@ nav{
 .nav__top {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     z-index: 3;
 }
@@ -144,7 +144,6 @@ nav{
 .nav__links {
     display: flex;
     gap: 48px;
-    margin-right: 128px;
     align-items: center;
 }
 
@@ -320,9 +319,7 @@ Small phones, tablets, and small computers
         width: 100%;
     }
 
-    .search__button {
-        display: none;
-    }
+    
 
     .search__result--filter {
         justify-content: space-between;
@@ -391,6 +388,10 @@ Small phones, tablets, and small computers
         justify-content: center;
     }
     
+    .nav-top {
+        justify-content:space-around;
+    }
+
     .nav__links {
         display: none;
     }
@@ -408,7 +409,7 @@ Small phones, tablets, and small computers
     }
 
     .search {
-        width: 100%;
+        width: 50%;
     }
 
     .search__input{

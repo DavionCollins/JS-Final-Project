@@ -12,17 +12,22 @@ const searchText = document.getElementById("searchText")
 const movieListEl = document.querySelector(".movie__list")
 const filterEl = document.getElementById("search__result")
 let movies = []
+filterEl.style.display = "none"
 
-async function onSearchChange(event) {
-    const Search = event.target.value.trim()
-
+async function onSearchClick() {
+    const Search = document.querySelector(".search__input").value.trim()
+    
     searchText.textContent = Search === "" ? "" : `"${Search}"`
 
     if (!Search) {
     movieListEl.innerHTML = ""
     movies = []
-    return
-}
+    }   
+    else if (filterEl) {
+        filterEl.style.display = ""
+    }
+
+
 
     const moviesURL = `https://www.omdbapi.com/?i=tt3896198&apikey=e56ee402&s=${Search}`
     const response = await fetch(moviesURL)
@@ -75,9 +80,11 @@ function showMovieDetails(Title) {
 }
 
 function movieHtml(Search) {
+
+    const poster = Search.Poster && Search.Poster !== "N/A" && Search.Poster.trim() !== "" ? Search.Poster : "Assets/noPoster.png"
 return `
         <div class="movie">
-        <img class="movie__poster" src="${Search.Poster}">
+        <img class="movie__poster" src="${poster}">
           <h3 class="movie__title">${Search.Title}</h3>
           <p class="movie__year">${Search.Year}</p>
       </div>`

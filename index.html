@@ -34,8 +34,8 @@
     <div class="search">
     <h1 class="search__title">Browse our Movies</h1>
     <div class="input__wrapper">
-    <input type="text" class="search__input" placeholder="Search by Name, Year, or Keyword" oninput="onSearchChange(event)"></input>
-    <button class="search__button"><i class="fa-solid fa-magnifying-glass"></i></button>
+    <input type="text" class="search__input" placeholder="Search by Name, Year, or Keyword"></input>
+    <button class="search__button" onclick=onSearchClick()><i class="fa-solid fa-magnifying-glass"></i></button>
     </div>
     </div>
   </nav>
@@ -43,7 +43,7 @@
     <section id="search__result">
       <div class="search__result--filter">
         <div class="input__name">Search results:<span id="searchText"></span></div>
-        <select class="filter">
+        <select  class="filter">
           <option value="default">Sort By</option>
           <option value="name__asc">Name (Ascending)</option>
           <option value="name__dsc">Name (Dscending)</option>
